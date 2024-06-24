@@ -1,0 +1,18 @@
+# data_processing.py
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+def process_data():
+  
+    df = pd.read_csv('your_dataset.csv')
+    summary = df.describe()
+    summary.to_csv('processed_data.csv')
+
+    
+    plt.figure()
+    df['column_name'].hist()
+    plt.savefig('static/plot.png')
+
+if __name__ == "__main__":
+    process_data()
